@@ -18,18 +18,19 @@ This project represents a new primitive for privacy in a cross-chain, multi-asse
 
 ## How it works
 🔒 MPC (Multi-Party Computation) Layer
-
 We implemented an MPC protocol based on Shamir’s Secret Sharing (SSS) and additive secret sharing.
 Every user balance is split into secret shares and distributed across an MPC committee.
 When a user initiates a transfer, the amount is never revealed; instead, MPC parties update the ledger via additive operations on shares.
 We designed secure protocols for add and subtract to maintain balance correctness without leakage.
-🔁 Cross-Chain Transfer with Hyperlane
 
+
+🔁 Cross-Chain Transfer with Hyperlane
 We integrated Hyperlane as our cross-chain messaging protocol to support bridging to EVM chains.
 When a user initiates a bridge, the MPC committee confirms share availability and sends an obfuscated payload to the destination chain via Hyperlane.
 Destination smart contracts validate the message, and users can claim their tokens without any amount disclosure on-chain.
-🚨 OFAC Compliance with Self Protocol
 
+
+🚨 OFAC Compliance with Self Protocol
 Before any user can transact, their identity is checked using Self Protocol’s privacy-preserving KYC framework.
 If they are found on the US OFAC sanctions list, their transaction is blocked at the MPC coordination layer.
 This ensures that we remain compliant with global regulations while maintaining privacy for legitimate users.
