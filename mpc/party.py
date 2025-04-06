@@ -539,7 +539,7 @@ def to_0x(hash):
     return hash
 
 # Sepolia
-w3 = Web3(Web3.HTTPProvider("https://arb-sepolia.g.alchemy.com/v2/jqB7OeLKcX8m2TMcinEyRBG6hXUq-kIC"))
+w3 = Web3(Web3.HTTPProvider("https://arb-sepolia.g.alchemy.com/v2/API-KEY"))
 address = "0x38f7AE184Dd3683F68D870aeFcd1B02c02b679b1"#input("Enter the sepolia contract address: ")
 contract = w3.eth.contract(address=address, abi=abi)
 intialize_filter = contract.events.InitializeAddress
